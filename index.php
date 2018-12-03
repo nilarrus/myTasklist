@@ -5,6 +5,6 @@
     <title>My Task List</title>
   </head>
   <body>
-    <?php echo "holis Git hub mola un monton"; ?>
+    <?php echo "holis"; ?>
   </body>
 </html>
