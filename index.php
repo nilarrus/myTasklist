@@ -5,6 +5,11 @@
     <title>My Task List</title>
   </head>
   <body>
-    <?php echo "holis Komo te va la vida"; ?>
+    <h1> Floating beyond... TASKLIST</h1>
+    <?php echo "
+    <div>
+    <p>Nova tasca:</p><input type='text' name="" value="">
+    </div>
+    "; ?>
   </body>
 </html>
