@@ -15,8 +15,7 @@ $PDO = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
-$Query = $PDO -> ("SELECT * FROM mytask;");
-
+//$Query = $PDO -> ("SELECT * FROM mytask;");
  ?>
   <body>
     <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
