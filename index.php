@@ -7,7 +7,7 @@
   <?php
   $db = parse_url(getenv("DATABASE_URL"));
 
-$pdo = new PDO("pgsql:" . sprintf(
+$PDO = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
     $db["host"],
     $db["port"],
@@ -15,6 +15,8 @@ $pdo = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
+$Query = $PDO -> ("SELECT * FROM mytask;");
+
  ?>
   <body>
     <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
