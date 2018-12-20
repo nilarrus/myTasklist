@@ -5,11 +5,10 @@
     <title>My Task List</title>
   </head>
   <body>
-    <h1> Floating beyond... TASKLIST</h1>
-    <p>My task list</p>
+    <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
     <?php echo "
     <div>
-    <p>Nova tasca:</p>
+    Nova tasca:
 <form>
     <input type='text' name='nom'>
     <input type='submit'>
