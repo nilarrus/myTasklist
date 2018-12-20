@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1> Floating beyond... TASKLIST</h1>
+    <p>My task list</p>
     <?php echo "
     <div>
     <p>Nova tasca:</p><input type='text' name="" value="">
