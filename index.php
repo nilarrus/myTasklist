@@ -13,7 +13,7 @@ $PDO = new PDO("pgsql:" . sprintf(
     $db["5432"],
     $db["nkbozhglxeacba"],
     $db["44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316"],
-    ltrim($db["postgres://nkbozhglxeacba:44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316@ec2-54-243-150-10.compute-1.amazonaws.com:5432/ddufqhqeeesvcb"], "/")
+    ltrim($db["ddufqhqeeesvcb"], "/")
 ));
 $Query = $PDO -> ("SELECT * FROM mytask;");
 $Query ->execute();
