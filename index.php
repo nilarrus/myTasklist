@@ -18,7 +18,7 @@ $PDO = new PDO("pgsql:" . sprintf(
 $Query = $PDO -> ("SELECT * FROM mytask;");
 $Query ->execute();
 $resu = $Query ->rowCount();
-echo $resu;
+
  ?>
   <body>
     <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
@@ -30,5 +30,6 @@ echo $resu;
         <input type='submit'>
     </form>
     </div>
+    echo $resu;
     "; ?>
   </body>
