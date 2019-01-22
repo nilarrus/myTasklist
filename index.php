@@ -9,13 +9,16 @@
 
 $PDO = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-    $db["host"],
-    $db["port"],
-    $db["user"],
-    $db["pass"],
-    ltrim($db["path"], "/")
+    $db["ec2-54-243-150-10.compute-1.amazonaws.com"],
+    $db["5432"],
+    $db["nkbozhglxeacba"],
+    $db["44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316"],
+    ltrim($db["postgres://nkbozhglxeacba:44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316@ec2-54-243-150-10.compute-1.amazonaws.com:5432/ddufqhqeeesvcb"], "/")
 ));
-//$Query = $PDO -> ("SELECT * FROM mytask;");
+$Query = $PDO -> ("SELECT * FROM mytask;");
+$Query ->execute();
+$resu = $Query ->rowCount();
+echo $resu;
  ?>
   <body>
     <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
