@@ -6,7 +6,7 @@
   </head>
   <?php
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-    alert($_POST['nom']);
+    echo $_POST['nom'];
     /*$dbconn = pg_connect("host=ec2-54-243-150-10.compute-1.amazonaws.com dbname=ddufqhqeeesvcb user=nkbozhglxeacba password=44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316")
     or die('No se ha podido conectar: '.pg_last_error());
     $result = pg_exec('INSERT INTO table_name (descriptio,hecho) VALUES ($_POST['nom'],0);');*/
