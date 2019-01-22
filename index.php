@@ -22,7 +22,7 @@
     <?php
     echo "
     <div>
-    <form action='index.html' method='post'>
+    <form action='index.php' method='post'>
         Nova tasca:
         <input type='text' name='nom'>
         <input type='submit' value='nova tasca'>
