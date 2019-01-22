@@ -30,6 +30,6 @@ $resu = $Query ->rowCount();
         <input type='submit'>
     </form>
     </div>
-    echo $resu;
+    $resu
     "; ?>
   </body>
