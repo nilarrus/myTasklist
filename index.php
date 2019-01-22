@@ -17,7 +17,7 @@ $result = pg_exec('SELECT * FROM mytask');
       echo "<table>\n";
       while ($row = pg_fetch_array($result)) {
           echo "\t<tr>\n";
-          echo "\t\t<td>".$row['descripcio']"</td>\n";
+          echo "\t\t<td>".$row['descripcio']."</td>\n";
           echo "\t</tr>\n";
       }
       echo "</table>\n";
