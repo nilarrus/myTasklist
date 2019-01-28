@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>My Task List XD</title>
   </head>
-  <?php
+ <?php
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo $_POST['nom'];
-    $dbconn = pg_connect("host=ec2-54-243-150-10.compute-1.amazonaws.com dbname=ddufqhqeeesvcb user=nkbozhglxeacba password=44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316")
+    $dbconn = pg_connect("host=    ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
     $nom = $_POST['nom'];
     $result = pg_exec('INSERT INTO mytasks (descriptio,hecho) VALUES ( $nom , 0 );');
   }
 
     //  $db = parse_url(getenv("DATABASE_URL"));
-    $dbconn = pg_connect("host=ec2-54-243-150-10.compute-1.amazonaws.com dbname=ddufqhqeeesvcb user=nkbozhglxeacba password=44f66b71869d41bf6b911906f1d0820ff112e8f1a1f431cd325b07ee234c2316")
+    $dbconn = pg_connect("host=    ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
     $result = pg_exec('SELECT * FROM mytask');
   ?>
