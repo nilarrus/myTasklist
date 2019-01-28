@@ -30,14 +30,13 @@
     </form>";
     echo "</div>";
     // Imprimiendo los resultados en HTML
-      echo "hecho";
       echo "<table>\n";
       while ($row = pg_fetch_array($result)) {
           echo "\t<tr>\n";
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho: ".$row['descripcio']."</td>\n";
           }else{
-            echo "\t\t<td>".$row['descripcio']."</td>\n";
+            echo "\t\t<td>    ".$row['descripcio']."</td>\n";
           }
           echo "\t</tr>\n";
       }
