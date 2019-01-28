@@ -10,13 +10,15 @@
     $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
     $nom = $_POST['nom'];
-    $result = pg_exec('INSERT INTO mytasks(descripcio,hecho) VALUES ('.''.$nom.''.',0);');
+    $result = pg_prepare($dbconn,"my_query",'INSERT INTO mytasks(descripcio,hecho) VALUES ($1,$2);');
+    $result = pg_execute($dbconn,"my_query",array($nom,0));
   }
 
     //  $db = parse_url(getenv("DATABASE_URL"));
     $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
-    $result = pg_exec('SELECT * FROM mytasks');
+    $result = pg_prepare($dbconn,"my_query",'SELECT * FROM mytasks');
+    $result = pg_execute($dbconn,"my_query");
   ?>
   <body>
     <h1>PLUS ULTRA!! TASKAS EDITYON</h1>
