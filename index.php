@@ -33,7 +33,6 @@
         <input type='text' name='nom'>
         <input type='submit' value='nova tasca'>
     </form>";
-    echo "<button action='index.php' type='submit' method = 'post' value='X'>X</button>";
     echo "</div>";
     // Imprimiendo los resultados en HTML
       echo "<table>\n";
@@ -42,7 +41,7 @@
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho</td>\n";
             echo "\t\t<td>".$row['descripcio']."
-            <a href='index.php?delete=".$row['id'].">Eliminar</a></td>\n";
+            <a href='#?delete='".$row['id']."'>Eliminar</a></td>\n";
           }else{
             echo "\t\t<td>----</td>\n";
             echo "\t\t<td>".$row['descripcio']."</td>\n";
