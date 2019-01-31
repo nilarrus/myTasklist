@@ -5,7 +5,7 @@
     <title>My Task List XD</title>
   </head>
  <?php
- echo "GET: ".$_GET;
+ echo "GET: ".var_dump($_GET);
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     
@@ -42,7 +42,7 @@
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho</td>\n";
             echo "\t\t<td>".$row['descripcio']."
-            <a src='index.php?delete='".$row['id']."''>Eliminar</a></td>\n";
+            <a href='index.php?delete=".$row['id'].">Eliminar</a></td>\n";
           }else{
             echo "\t\t<td>----</td>\n";
             echo "\t\t<td>".$row['descripcio']."</td>\n";
