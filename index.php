@@ -6,6 +6,9 @@
   </head>
  <?php
   if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(isset($_POST['delete'])){
+      echo "delete valor: ".$_POST['delete'];
+    }
     $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
     $nom = $_POST['nom'];
@@ -34,9 +37,11 @@
       while ($row = pg_fetch_array($result)) {
           echo "\t<tr>\n";
           if($row['hecho']!=0){
-            echo "\t\t<td>Hecho: ".$row['descripcio']."</td>\n";
+            echo "\t\t<td>Hecho</td>\n";
+            echo "\t\t<td>".$row['descripcio']."</td>\n";
           }else{
-            echo "\t\t<td>    ".$row['descripcio']."</td>\n";
+            echo "\t\t<td>No Hecho</td>\n";
+            echo "\t\t<td>".$row['descripcio']."</td>\n";
           }
           echo "\t</tr>\n";
       }
