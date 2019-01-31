@@ -41,7 +41,7 @@
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho</td>\n";
             echo "\t\t<td>".$row['descripcio']."
-            <a href='#?delete='".$row['id']."'>Eliminar</a></td>\n";
+            <a href='#?delete=".$row['id'].">Eliminar</a></td>\n";
           }else{
             echo "\t\t<td>----</td>\n";
             echo "\t\t<td>".$row['descripcio']."</td>\n";
