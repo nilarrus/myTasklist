@@ -5,9 +5,10 @@
     <title>My Task List XD</title>
   </head>
  <?php
+ echo "GET: ".$_GET;
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-    echo "POST: ".$_POST;
+    
     
     $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
@@ -40,7 +41,8 @@
           echo "\t<tr>\n";
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho</td>\n";
-            echo "\t\t<td>".$row['descripcio']."</td>\n";
+            echo "\t\t<td>".$row['descripcio']."
+            <a src='index.php?delete='".$row['id']."''>Eliminar</a></td>\n";
           }else{
             echo "\t\t<td>----</td>\n";
             echo "\t\t<td>".$row['descripcio']."</td>\n";
