@@ -65,10 +65,10 @@
       //por hacer
       echo "<h3>Por Hacer</h3>";
       echo "<table>\n";
-      foreach($result1 as $row){
+      foreach($result2 as $row2){
         echo "\t<tr>\n";
-          echo "\t\t<td>".$row['descripcio']." <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
-          echo "\t\t<td>Por Hacer <a href='index.php?hecho=".$row['id']."'>Cambiar</a></td>\n";    
+          echo "\t\t<td>".$row2['descripcio']." <a href='index.php?delete=".$row2['id']."'>Eliminar</a></td>\n";
+          echo "\t\t<td>Por Hacer <a href='index.php?hecho=".$row2['id']."'>Cambiar</a></td>\n";    
           echo "\t</tr>\n";
       }
       echo "</table>\n";
