@@ -59,6 +59,18 @@
     echo "</div>";
     // Imprimiendo los resultados en HTML
       echo "<table>\n";
+      foreach($result as $row){
+        echo "\t<tr>\n";          
+          echo "\t\t<td>--".$row['id']."--</td>\n";
+          echo "\t\t<td>".$row['descripcio']." <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
+          if($row['hecho']!=0){
+            echo "\t\t<td>Hecho</td>\n";
+          }else{
+            echo "\t\t<td>Por Hacer</td>\n";
+          }         
+          echo "\t</tr>\n";
+      }
+      /*
       while ($row = pg_fetch_array($result)) {
           echo "\t<tr>\n";          
           echo "\t\t<td>--".$row['id']."--</td>\n";
@@ -69,7 +81,7 @@
             echo "\t\t<td>Por Hacer</td>\n";
           }         
           echo "\t</tr>\n";
-      }
+      }*/
       echo "</table>\n";
       // Liberando el conjunto de resultados
       pg_free_result($result);
