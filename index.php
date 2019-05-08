@@ -30,7 +30,7 @@
  }
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nom = $_POST['nom'];
-    $query = $db->prepare("INSERT INTO TaskList (task,state) VALUES ('".$nom."',0)");
+    $query = $db->prepare("INSERT INTO mytasks (descripcio,hecho) VALUES ('".$nom."',0)");
     $query->execute();
   }
    
