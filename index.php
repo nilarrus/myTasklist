@@ -37,8 +37,8 @@
     $query->execute();
   }
    //mostrar todo
-    $result1 = $db->query("SELECT * FROM mytasks where hecho = 0");
-    $result2 = $db->query("SELECT * FROM mytasks where hecho = 1");
+    $result2 = $db->query("SELECT * FROM mytasks where hecho = 0");
+    $result1 = $db->query("SELECT * FROM mytasks where hecho = 1");
   ?>
   <body>
     <h1>TASKAS EDITYON</h1>
