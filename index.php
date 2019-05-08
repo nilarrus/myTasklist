@@ -37,7 +37,8 @@
     $query->execute();
   }
    //mostrar todo
-    $result = $db->query("SELECT * FROM mytasks");
+    $result1 = $db->query("SELECT * FROM mytasks where hecho = 0");
+    $result2 = $db->query("SELECT * FROM mytasks where hecho = 1");
   ?>
   <body>
     <h1>TASKAS EDITYON</h1>
@@ -51,16 +52,23 @@
         <input type='submit' value='nova tasca'>
     </form>";
     echo "</div>";
-    // Imprimiendo los resultados en HTML
+    // hechos
+    echo "<h3>Hechos</h3>";
       echo "<table>\n";
-      foreach($result as $row){
+      foreach($result1 as $row1){
+        echo "\t<tr>\n";
+          echo "\t\t<td>".$row1['descripcio']." <a href='index.php?delete=".$row1['id']."'>Eliminar</a></td>\n";
+          echo "\t\t<td>Hecho <a href='index.php?PorHacer=".$row1['id']."'>Cambiar</a></td>\n";        
+          echo "\t</tr>\n";
+      }
+      echo "</table>\n";
+      //por hacer
+      echo "<h3>Por Hacer</h3>";
+      echo "<table>\n";
+      foreach($result1 as $row){
         echo "\t<tr>\n";
           echo "\t\t<td>".$row['descripcio']." <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
-          if($row['hecho']!=0){
-            echo "\t\t<td>Hecho <a href='index.php?PorHacer=".$row['id']."'>Cambiar</a></td>\n";
-          }else{
-            echo "\t\t<td>Por Hacer <a href='index.php?hecho=".$row['id']."'>Cambiar</a></td>\n";
-          }         
+          echo "\t\t<td>Por Hacer <a href='index.php?hecho=".$row['id']."'>Cambiar</a></td>\n";    
           echo "\t</tr>\n";
       }
       echo "</table>\n";
