@@ -6,8 +6,16 @@
   </head>
  <?php
  echo "GET: ".var_dump($_GET);
+ if($_SERVER["REQUEST_METHOD"] == "GET"){
+   echo "En el get";
+   $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
+   or die('No se ha podido conectar: '.pg_last_error());
+   $id = $_GET['delete'];
+   $result = pg_prepare($dbconn,"my_query",'DELETE FROM mytasks WHERE id LIKE $1;');
+   $result = pg_execute($dbconn,"my_query",$id);
+ }
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-      echo "Dins el if";
+      echo "En el post";
     $dbconn = pg_connect("host=ec2-107-21-224-76.compute-1.amazonaws.com dbname=d9tf9mvi6tvf71 user=xrnnfbpijdpmin password=e2f25edc7569735ac66c311c993f760c258fbdbb19a97e7650d1d6524cf9da80")
     or die('No se ha podido conectar: '.pg_last_error());
     $nom = $_POST['nom'];
@@ -42,7 +50,7 @@
             echo "\t\t<td>".$row['descripcio']."
             <a href='#?delete=".$row['id']."'>Eliminar</a></td>\n";
           }else{
-            echo "\t\t<td>----</td>\n";
+            echo "\t\t<td>--".$row['id']."--</td>\n";
             echo "\t\t<td>".$row['descripcio']."
             <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
           }
