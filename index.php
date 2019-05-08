@@ -44,7 +44,7 @@
           }else{
             echo "\t\t<td>----</td>\n";
             echo "\t\t<td>".$row['descripcio']."
-            <a href='index.php?delete=".$row['id'].">Eliminar</a></td>\n";
+            <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
           }
           echo "\t</tr>\n";
       }
