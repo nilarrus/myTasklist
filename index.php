@@ -23,6 +23,14 @@
     $query = $db->prepare("DELETE FROM mytasks WHERE id = ".$task.";");
     $query->execute();
  }
+ if(isset($_GET['PorHacer'])){
+  $query = $db->prepare("UPDATE mytasks SET hecho = 1 WHERE id = ".$_GET['PorHacer'].";");
+  $query->execute();
+ }
+ if(isset($_GET['hecho'])){
+  $query = $db->prepare("UPDATE mytasks SET hecho = 0 WHERE id = ".$_GET['PorHacer'].";");
+  $query->execute();
+}
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nom = $_POST['nom'];
     $query = $db->prepare("INSERT INTO mytasks (descripcio,hecho) VALUES ('".$nom."',0)");
