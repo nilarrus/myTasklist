@@ -28,7 +28,7 @@
   $query->execute();
  }
  if(isset($_GET['hecho'])){
-  $query = $db->prepare("UPDATE mytasks SET hecho = 0 WHERE id = ".$_GET['PorHacer'].";");
+  $query = $db->prepare("UPDATE mytasks SET hecho = 0 WHERE id = ".$_GET['hecho'].";");
   $query->execute();
 }
   if($_SERVER["REQUEST_METHOD"] == "POST"){
