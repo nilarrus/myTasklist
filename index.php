@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>My Task List XD</title>
+    <title>My Task List</title>
   </head>
  <?php
   //conexion en PDO
