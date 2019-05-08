@@ -54,8 +54,7 @@
     // Imprimiendo los resultados en HTML
       echo "<table>\n";
       foreach($result as $row){
-        echo "\t<tr>\n";          
-          echo "\t\t<td>--".$row['id']."--</td>\n";
+        echo "\t<tr>\n";
           echo "\t\t<td>".$row['descripcio']." <a href='index.php?delete=".$row['id']."'>Eliminar</a></td>\n";
           if($row['hecho']!=0){
             echo "\t\t<td>Hecho <a href='index.php?PorHacer=".$row['id']."'>Cambiar</a></td>\n";
